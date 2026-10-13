@@ -1,8 +1,8 @@
 import SectionPanel from '@/components/Shared/SectionPanel';
-import AboutHero from "@/components/about/AboutHero";
-import OurStory from "@/components/about/OurStory";
-import Mission from "@/components/about/Mission";
-import Expertise from "@/components/about/Expertise";
+import AboutHero from "@/components/About/AboutHero";
+import OurStory from "@/components/About/OurStory";
+import Mission from "@/components/About/Mission";
+import Expertise from "@/components/About/Expertise";
 import CoreValues from "@/components/About/CoreValues";
 import WhyChooseUs from "@/components/About/WhyChooseUs";
 

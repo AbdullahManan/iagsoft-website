@@ -1,4 +1,4 @@
-import SectionPanel from '@/components/shared/SectionPanel';
+import SectionPanel from '@/components/Shared/SectionPanel';
 import ContactHero from '@/components/Contact/ContactHero';
 import ContactSection from '@/components/Contact/ContactSection';
 

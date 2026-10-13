@@ -1,4 +1,4 @@
-import SectionPanel from '@/components/shared/SectionPanel';
+import SectionPanel from '@/components/Shared/SectionPanel';
 import ProductHero from '@/components/Product/ProductHero';
 import ProductSelector from '@/components/Product/ProductSelector';
 

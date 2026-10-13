@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import SectionPanel from '@/components/shared/SectionPanel';
+import SectionPanel from '@/components/Shared/SectionPanel';
 import styles from './ServiceTemplate.module.css';
 import ServiceHero from './ServiceHero';
 

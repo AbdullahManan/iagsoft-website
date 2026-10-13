@@ -1,4 +1,4 @@
-import ServiceTemplate from "@/components/services/ServiceTemplate";
+import ServiceTemplate from "@/components/Services/ServiceTemplate";
 import { erpDevelopment } from "@/data/services/erp-development";
 
 export const metadata = {

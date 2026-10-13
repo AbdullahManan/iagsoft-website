@@ -3,7 +3,7 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import SectionPanel from '@/components/shared/SectionPanel';
+import SectionPanel from '@/components/Shared/SectionPanel';
 import styles from './ProductTemplate.module.css';
 import { useEffect, useRef, useState, Fragment } from 'react';
 

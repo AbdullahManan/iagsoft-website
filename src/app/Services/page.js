@@ -1,5 +1,5 @@
-import ServicesHero from "@/components/services/ServicesHero";
-import ServiceRows from "@/components/services/ServiceRows";
+import ServicesHero from "@/components/Services/ServicesHero";
+import ServiceRows from "@/components/Services/ServiceRows";
 
 export const metadata = {
   title: "Our Services — IAG Soft",

@@ -1,4 +1,4 @@
-import SectionPanel from '@/components/shared/SectionPanel';
+import SectionPanel from '@/components/Shared/SectionPanel';
 import Hero from '@/components/ApnaAccount/Hero';
 import TrustStrip from '@/components/ApnaAccount/TrustStrip';
 import ProblemSolution from '@/components/ApnaAccount/ProblemSolution';

@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 
 import Navbar from "@/components/Shared/Navbar";
-import Footer from "@/components/shared/Footer";
+import Footer from "@/components/Shared/Footer";
 import SmoothScroll from "@/components/Shared/SmoothScroll";
 import Preloader from "@/components/Shared/Preloader";
 

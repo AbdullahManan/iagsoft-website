@@ -1,4 +1,4 @@
-import ServiceTemplate from "@/components/services/ServiceTemplate";
+import ServiceTemplate from "@/components/Services/ServiceTemplate";
 import { sapIntegration } from "@/data/services/sap-integration";
 
 export const metadata = {
