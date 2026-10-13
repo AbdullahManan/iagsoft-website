@@ -1,0 +1,447 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 96px 0;
+}
+
+.bgLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#0a33910a 1px, transparent 1px),
+    linear-gradient(90deg, #0a33910a 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, black, transparent);
+  pointer-events: none;
+}
+
+.canvas {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.heroBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; /* Keeps both columns aligned on their horizontal axis */
+  gap: 48px;
+}
+
+@media (max-width: 960px) {
+  .heroBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Left Column ---------- */
+
+.left {
+  position: relative;
+  z-index: 2;
+}
+
+.pills {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.pillPrimary,
+.pillSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillPrimary {
+  background: #0a3391;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(10, 51, 145, 0.25);
+}
+
+.pillPrimary:hover {
+  transform: translateY(-2px);
+  background: #082a75;
+  box-shadow: 0 6px 20px rgba(10, 51, 145, 0.35);
+}
+
+.pillSecondary {
+  background: #eaeefb;
+  color: #0a3391;
+}
+
+.pillSecondary:hover {
+  transform: translateY(-2px);
+  background: #dbe4f9;
+}
+
+.headline {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  font-weight: 600;
+  color: #0b1130;
+  margin: 0 0 28px;
+  letter-spacing: -0.02em;
+}
+
+.headlineLine {
+  display: block;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0a3391;
+  text-decoration: none;
+}
+
+.readMore span {
+  transition: transform 0.2s ease;
+}
+
+.readMore:hover span {
+  transform: translateX(4px);
+}
+
+/* ---------- Right Column Container ---------- */
+
+.right {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 460px; /* Reduced from 520px to eliminate dead bottom margin */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .right {
+    transform: scale(0.65);
+    transform-origin: top center;
+    margin-bottom: -160px;
+  }
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Connecting Lines & Particles */
+
+.connectorPath {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+  opacity: 0.45;
+  filter: drop-shadow(0 0 2px rgba(37, 99, 235, 0.3));
+}
+
+.pulseDot {
+  fill: #2563eb;
+  filter: drop-shadow(0 0 6px #2563eb);
+}
+
+.pulseDotControl {
+  fill: #60a5fa;
+  filter: drop-shadow(0 0 6px #60a5fa);
+}
+
+/* Floating Device Animations */
+
+.floatingDevice {
+  animation: floatSlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/* SVG Elements Styling */
+
+.iconFillDark {
+  fill: #0b1130;
+}
+
+.iconFillLight {
+  fill: #3b82f6;
+}
+
+.iconStroke {
+  stroke: #3b82f6;
+  fill: none;
+}
+
+.joint {
+  fill: #2563eb;
+}
+
+.phoneScreenRect {
+  fill: #1d4ed8;
+  opacity: 0.9;
+}
+
+/* WiFi Pulsing Signal Rings */
+
+.wifiGroup {
+  transform-box: fill-box;
+}
+
+.wifiPoint {
+  fill: #2563eb;
+  filter: drop-shadow(0 0 3px #2563eb);
+}
+
+.wifiArc {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0.2;
+  filter: drop-shadow(0 0 2px rgba(37, 99, 235, 0.5));
+  animation: wifiWave 1.6s ease-in-out infinite;
+}
+
+.wifiArcInner {
+  animation-delay: 0.2s;
+}
+
+.wifiArcOuter {
+  animation-delay: 0.4s;
+}
+
+@keyframes wifiWave {
+  0%, 100% {
+    opacity: 0.2;
+    stroke: #2563eb;
+  }
+  50% {
+    opacity: 1;
+    stroke: #60a5fa;
+  }
+}
+
+/* ---------- In-SVG Device Badges ---------- */
+
+.svgBadgeBg {
+  fill: #0b1130;
+  stroke: rgba(59, 130, 246, 0.3);
+  stroke-width: 1;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.svgBadgeText {
+  fill: #f1f5f9;
+  font-size: 9.5px;
+  font-weight: 500;
+  font-family: inherit;
+  text-anchor: middle;
+}
+
+.statusDotGreen {
+  fill: #10b981;
+  filter: drop-shadow(0 0 3px #10b981);
+}
+
+.statusDotBlue {
+  fill: #3b82f6;
+  filter: drop-shadow(0 0 3px #3b82f6);
+}
+
+/* ---------- Central Device Panel (Hub) ---------- */
+
+.panel {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 270px; /* Snaps directly to the lowered SVG connecting ports */
+  transform: translateX(-50%);
+  width: 240px;
+  background: #0b1130;
+  border-radius: 20px;
+  padding: 16px 20px 20px;
+  box-shadow:
+    0 20px 50px -10px rgba(10, 51, 145, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.panelGlow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), transparent 60%);
+  pointer-events: none;
+}
+
+/* Docking Port Anchor Dots */
+
+.portNode {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #2563eb;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #2563eb;
+}
+
+.portLeft {
+  top: 0;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.portCenter {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portRight {
+  top: 0;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+/* Gateway Header */
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.gatewayTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.livePulse {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: blink 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.nodeCount {
+  font-size: 10px;
+  font-weight: 600;
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Panel Display Screen */
+
+.panelScreen {
+  height: 65px;
+  background: #101842;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+.bar {
+  flex: 1;
+  background: #4C6FCE;
+  border-radius: 2px;
+  height: 8%;
+  align-self: flex-end;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* .bar:nth-child(1) { --bar-h: 90%; animation-name: barSeq0; }
+.bar:nth-child(2) { --bar-h: 78%; animation-name: barSeq1; }
+.bar:nth-child(3) { --bar-h: 68%; animation-name: barSeq2; }
+.bar:nth-child(4) { --bar-h: 58%; animation-name: barSeq3; }
+.bar:nth-child(5) { --bar-h: 48%; animation-name: barSeq4; }
+.bar:nth-child(6) { --bar-h: 38%; animation-name: barSeq5; }
+.bar:nth-child(7) { --bar-h: 28%; animation-name: barSeq6; }
+.bar:nth-child(8) { --bar-h: 20%; animation-name: barSeq7; } */
+.bar:nth-child(1) { --bar-h: 20%; animation-name: barSeq0; }
+.bar:nth-child(2) { --bar-h: 28%; animation-name: barSeq1; }
+.bar:nth-child(3) { --bar-h: 38%; animation-name: barSeq2; }
+.bar:nth-child(4) { --bar-h: 48%; animation-name: barSeq3; }
+.bar:nth-child(5) { --bar-h: 58%; animation-name: barSeq4; }
+.bar:nth-child(6) { --bar-h: 68%; animation-name: barSeq5; }
+.bar:nth-child(7) { --bar-h: 78%; animation-name: barSeq6; }
+.bar:nth-child(8) { --bar-h: 90%; animation-name: barSeq7; }
+
+@keyframes barSeq0 { 0% { height: 8%; } 8% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq1 { 0%, 8% { height: 8%; } 16% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq2 { 0%, 16% { height: 8%; } 24% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq3 { 0%, 24% { height: 8%; } 32% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq4 { 0%, 32% { height: 8%; } 40% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq5 { 0%, 40% { height: 8%; } 48% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq6 { 0%, 48% { height: 8%; } 56% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+@keyframes barSeq7 { 0%, 56% { height: 8%; } 64% { height: var(--bar-h); } 82% { height: var(--bar-h); } 96%, 100% { height: 8%; } }
+
+/* Hub Footer Badge */
+
+.hubFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.iotSolutionsBadge {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 5px 16px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.15);
+}

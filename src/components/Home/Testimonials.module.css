@@ -1,0 +1,313 @@
+
+.section {
+  padding: var(--space-xl) var(--space-md);
+  background: var(--bg);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: block;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.headline {
+  text-align: center;
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-xl);
+}
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  padding: 60px;
+
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  align-items: center;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(10, 51, 145, 0.07);
+}
+
+/* Background glow */
+
+.glow {
+  position: absolute;
+
+  top: -150px;
+  right: -100px;
+
+  width: 400px;
+  height: 400px;
+
+  background: var(--accent);
+
+  filter: blur(120px);
+
+  opacity: 0.08;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   TESTIMONIAL
+========================================= */
+
+.testimonialContent {
+  position: relative;
+  z-index: 1;
+
+  max-width: 680px;
+}
+
+.quoteMark {
+  display: block;
+
+  font-size: 5rem;
+  line-height: 0.7;
+
+  color: var(--accent);
+
+  font-family: Georgia, serif;
+
+  opacity: 0.7;
+
+  margin-bottom: 25px;
+}
+
+.quote {
+  font-size: 1.35rem;
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  color: var(--text-primary);
+
+  margin: 0 0 30px;
+
+  font-style: italic;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.author strong {
+  font-size: var(--font-size-base);
+  color: var(--accent-red);
+}
+
+.author span {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   COMPANY LOGO
+========================================= */
+
+.companySide {
+  position: relative;
+  z-index: 1;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 50px;
+
+  border-left: 1px solid var(--border);
+}
+
+.logoContainer {
+  width: 280px;
+  height: 230px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  border-radius: var(--radius-md);
+
+  padding: 25px;
+
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 120px;
+
+  object-fit: contain;
+}
+
+.companyName {
+  font-size: var(--font-size-sm);
+
+  color: var(--text-secondary);
+
+  font-weight: 500;
+}
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  font-size: var(--font-size-base);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navBtn:hover {
+  background: var(--accent-tint);
+
+  transform: translateY(-2px);
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot,
+.dotActive {
+  width: 6px;
+  height: 6px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: var(--border);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    width 0.2s ease;
+}
+
+.dotActive {
+  width: 20px;
+
+  background: var(--accent);
+
+  border-radius: var(--radius-pill);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .card {
+    grid-template-columns: 1fr;
+
+    padding: 40px 30px;
+
+    min-height: auto;
+  }
+
+  .testimonialContent {
+    max-width: none;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .quoteMark {
+    font-size: 4rem;
+  }
+
+  .companySide {
+    margin-top: 35px;
+
+    padding-left: 0;
+    padding-top: 30px;
+
+    border-left: none;
+    border-top: 1px solid var(--border);
+
+    min-height: 150px;
+  }
+
+  .logoContainer {
+    width: 150px;
+    height: 100px;
+
+    margin-bottom: 12px;
+  }
+}
+

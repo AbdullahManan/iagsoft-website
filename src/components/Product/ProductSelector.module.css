@@ -1,0 +1,315 @@
+.section {
+  position: relative;
+  padding: var(--space-lg) var(--space-md);
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden; /* contains anything that could push wider than the section */
+}
+
+.inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  background: var(--accent-tint);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-sm);
+}
+
+.heading {
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  max-width: 600px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: var(--space-lg);
+  text-align: left;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Tab list (desktop: vertical, mobile: horizontal strip) ---------- */
+
+.tabListWrap {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tabList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scroll-behavior: smooth;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.tabList::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tabList::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.arrow {
+  display: none;
+}
+
+.tab {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.65rem var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease, color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.tab:hover {
+  background: var(--accent-tint);
+}
+
+.tabIndicator {
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: transparent;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.tabLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  min-width: 0;
+}
+
+.tabGroup {
+  font-size: 0.7rem;
+  color: var(--accent-red);
+  opacity: 0.7;
+  margin-top: 1px;
+}
+
+.tabActive {
+  background: var(--accent-tint);
+}
+
+.tabActive .tabIndicator {
+  background: var(--accent);
+}
+
+.tabActive .tabLabel {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Detail panel ---------- */
+
+.panelWrap {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.panelGlow {
+  position: absolute;
+   inset: -8% -5%; /* was -20% -10% — much less overhang */
+  background: radial-gradient(circle at 20% 20%, var(--accent-tint) 0%, transparent 65%);
+  filter: blur(20px);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: 0 20px 50px rgba(10, 51, 145, 0.08);
+  height: 100%;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.panelGroup {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-xs);
+}
+
+.panelTag {
+  display: block;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  overflow-wrap: break-word;
+}
+
+.panelTagline {
+  font-size: var(--font-size-base);
+  color: var(--accent);
+  margin: 0 0 var(--space-sm);
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.panelDesc {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--space-lg);
+  overflow-wrap: break-word;
+}
+
+.detailsBtn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.detailsBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(10, 51, 145, 0.25);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 800px) {
+  .section {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .tabListWrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .tabList {
+    flex: 1 1 auto;
+    min-width: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    max-height: none;
+    gap: 8px;
+    padding-bottom: 6px;
+    cursor: grab;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabList:active {
+    cursor: grabbing;
+  }
+
+  .tab {
+    flex-shrink: 0;
+    padding: 0.6rem 1rem;
+  }
+
+  .tabIndicator {
+    display: none;
+  }
+
+  .tabLabel {
+    flex-direction: row;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .arrow:active {
+    background: var(--accent-tint);
+  }
+
+  .panelWrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .panel {
+    padding: var(--space-md);
+  }
+
+  .detailsBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

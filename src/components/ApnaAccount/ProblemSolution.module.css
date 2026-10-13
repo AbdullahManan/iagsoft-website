@@ -1,0 +1,141 @@
+.section {
+  padding: var(--space-xl) var(--space-md);
+  background: transparent;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--accent-red);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.headline {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.intro {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.positionCallout {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-md);
+}
+
+.positionLabel {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.positionCallout p {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: 0 10px 30px rgba(10, 51, 145, 0.06), 0 30px 60px rgba(10, 51, 145, 0.08);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(10, 51, 145, 0.1), 0 50px 90px rgba(10, 51, 145, 0.14);
+}
+
+.tagRow {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.tag {
+  font-size: var(--font-size-xs);
+  color: var(--accent-red);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tag2 {
+  font-size: var(--font-size-xs);
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: var(--space-sm);
+}
+
+.divider {
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.cardDesc {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .topRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

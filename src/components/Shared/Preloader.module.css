@@ -1,0 +1,86 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+
+  overflow: hidden;
+
+  opacity: 1;
+  will-change: opacity;
+}
+
+.glow {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(10, 51, 145, 0.10) 0%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.logoWrap {
+  position: relative;
+  z-index: 1;
+
+  width: min(400px, 70vw);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoGhost {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  opacity: 0.12;
+
+  filter: grayscale(100%);
+}
+
+.logoReveal {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  will-change: clip-path;
+}
+
+.logoSharp {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.percentage {
+  position: relative;
+  z-index: 1;
+
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+
+  letter-spacing: 0.05em;
+  font-weight: 500;
+
+  font-variant-numeric: tabular-nums;
+}

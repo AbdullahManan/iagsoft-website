@@ -1,0 +1,116 @@
+.section {
+  padding: var(--space-xl) 0;
+  background: var(--bg);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.headline {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+
+.videoOuter {
+  position: relative;
+}
+
+.videoWrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #d8dce3;
+  box-shadow: 0 40px 80px rgba(10, 51, 145, 0.12);
+}
+
+.posterBtn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(10, 20, 40, 0.35), rgba(10, 20, 40, 0.45)),
+    radial-gradient(circle at 30% 30%, #4a5b8a, #1a2340);
+}
+
+.playCircle {
+  position: relative;
+  z-index: 1;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.posterBtn:hover .playCircle {
+  transform: scale(1.08);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quoteCard {
+  position: absolute;
+  bottom: -30px;
+  left: 40px;
+  max-width: 380px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.quoteText {
+  font-size: var(--font-size-base);
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.quoteAuthor {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .quoteCard {
+    position: static;
+    max-width: 100%;
+    margin-top: var(--space-md);
+  }
+}   

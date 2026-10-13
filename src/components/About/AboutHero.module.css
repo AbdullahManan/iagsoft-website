@@ -1,0 +1,106 @@
+.wrapper {
+  position: relative;
+  min-height: 80vh;
+  background: transparent;
+  padding: 140px var(--space-md) var(--space-xl);
+  overflow: hidden;
+}
+
+.bgLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(10, 51, 145, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(10, 51, 145, 0.04) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.canvas {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--accent-red);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.headline {
+  font-size: var(--font-size-2xl);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+
+.line {
+  display: block;
+}
+
+.subtext {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0;
+}
+
+.sinceBadge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-xl);
+  box-shadow: 0 20px 50px rgba(10, 51, 145, 0.08);
+    flex-shrink: 0;
+}
+
+.sinceLabel {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sinceValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.contentRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .headline {
+    font-size: var(--font-size-xl);
+  }
+}
+@media (max-width: 900px) {
+  .contentRow {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .subtext {
+    max-width: 100%;
+  }
+}

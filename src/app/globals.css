@@ -1,49 +1,75 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Backgrounds */
+  --bg: #eeeeee;
+  --surface: #FFFFFF;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Text */
+  --text-primary: #0A3391;
+  --text-secondary: #040427;
 
-html {
-  height: 100%;
-}
+  /* Borders */
+  --border: #E5E6E8;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  /* Brand accent (from logo, tinted for the light aesthetic) */
+  --accent: #0A3391;
+  --accent-tint: #EAEEFB;
+  --accent-red: #FC0000;
 
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Type scale */
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-base: 1.125rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2.25rem;
+  --font-size-2xl: 3.5rem;
+  --font-size-3xl: 5rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 4rem;
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --radius-pill: 999px;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis will handle smooth scroll */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }

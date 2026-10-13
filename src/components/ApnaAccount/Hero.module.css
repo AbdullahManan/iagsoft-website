@@ -1,0 +1,439 @@
+
+.section {
+  position: relative;
+  padding: 120px var(--space-md) 100px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    var(--accent-tint) 0%,
+    transparent 70%
+  );
+  filter: blur(90px);
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================
+   MAIN HERO LAYOUT
+========================= */
+
+.inner {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 70px;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--accent);
+  background: var(--accent-tint);
+
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+
+  margin-bottom: var(--space-md);
+}
+
+.headline {
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  font-weight: 600;
+
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+
+  color: var(--text-primary);
+
+  margin: 0 0 var(--space-md);
+}
+
+.subtext {
+  max-width: 620px;
+
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+
+  margin: 0 0 var(--space-lg);
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background: var(--accent);
+  color: #fff;
+
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+
+  padding: 0.9rem 1.8rem;
+
+  border-radius: var(--radius-pill);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(10, 51, 145, 0.25);
+}
+
+.ctaSecondary {
+  color: var(--text-primary);
+
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+
+  padding: 0.9rem 1.8rem;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+.mockupWrap {
+  width: 100%;
+
+  perspective: 1200px;
+
+  transform-style: preserve-3d;
+
+  will-change: transform, opacity;
+}
+
+.laptop {
+  position: relative;
+
+  width: 100%;
+
+  transform-style: preserve-3d;
+
+  filter:
+    drop-shadow(0 35px 45px rgba(10, 51, 145, 0.16));
+}
+
+.laptopScreen {
+  position: relative;
+
+  background: #1c1e26;
+
+  border-radius:
+    var(--radius-md)
+    var(--radius-md)
+    7px
+    7px;
+
+  padding: 10px;
+
+  box-shadow:
+    0 25px 60px rgba(10, 51, 145, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.screenBar {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.screenImageWrap {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1900 / 950;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: var(--bg);
+}
+
+.screenImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.laptopBase {
+  height: 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #2a2d38,
+      #1c1e26
+    );
+
+  border-radius:
+    0 0
+    12px
+    12px;
+
+  margin: 0 -25px;
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .section {
+    padding: 100px var(--space-md) 80px;
+  }
+
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+  }
+
+  .headline {
+    font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  }
+
+  .subtext {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .section {
+    padding: 90px var(--space-sm) 70px;
+
+    text-align: center;
+  }
+
+  .inner {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 50px;
+
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .headline {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.03em;
+  }
+
+  .subtext {
+    max-width: 600px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 0.95rem;
+
+    line-height: 1.65;
+  }
+
+  .ctaRow {
+    justify-content: center;
+  }
+
+  .mockupWrap {
+    width: 100%;
+
+    max-width: 680px;
+
+    margin: 0 auto;
+  }
+
+  .laptopScreen {
+    padding: 7px;
+  }
+
+  .screenBar {
+    padding: 4px 6px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .laptopBase {
+    height: 10px;
+
+    margin: 0 -12px;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+  .section {
+    padding:
+      80px
+      16px
+      60px;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+
+    padding:
+      0.35rem
+      0.8rem;
+  }
+
+  .headline {
+    font-size: 2.05rem;
+
+    line-height: 1.08;
+  }
+
+  .subtext {
+    font-size: 0.88rem;
+
+    line-height: 1.65;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+
+    text-align: center;
+
+    padding:
+      0.85rem
+      1.4rem;
+  }
+
+  .mockupWrap {
+    width: calc(100% - 8px);
+  }
+
+  .laptopScreen {
+    padding: 5px;
+
+    border-radius:
+      8px
+      8px
+      4px
+      4px;
+  }
+
+  .screenBar {
+    padding: 3px 4px;
+  }
+
+  .screenImageWrap {
+    border-radius: 5px;
+  }
+
+  .laptopBase {
+    height: 8px;
+
+    margin: 0 -8px;
+
+    border-radius:
+      0 0
+      8px
+      8px;
+  }
+}
+

@@ -2,6 +2,12 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: '**.cdninstagram.com' },
+      { protocol: 'https', hostname: '**.fbcdn.net' },
+    ],
+  },
 };
 
 export default nextConfig;
